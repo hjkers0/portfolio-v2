@@ -1,0 +1,155 @@
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-content {
+  line-height: 1.6;
+}
+
+.intro {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-container {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.skills-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
+
+.skills-filter button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.skills-filter button.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.skills-filter button:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 300px;
+  padding: 1rem;
+}
+
+.skill-bubble {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  color: #121b2f; 
+}
+
+.skill-bubble:hover {
+  transform: translateY(-5px) scale(1.20);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+}
+
+.skill-bubble i {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #0d6efd;
+}
+
+.skill-name {
+  font-weight: 600; /* Increased weight for better visibility */
+  text-align: center;
+  color: #121b2f; /* Ensuring dark text on light bubbles */
+}
+
+.skill-level {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.8rem;
+  color: #121b2f; /* Darker text for better contrast */
+  font-weight: 700; /* Bolder for better readability */
+  opacity: 0.8;
+}
+
+.personal-interests {
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.contact-info a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Animation for skill bubbles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.skill-bubble {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.skill-bubble:nth-child(1) { animation-delay: 0.1s; }
+.skill-bubble:nth-child(2) { animation-delay: 0.2s; }
+.skill-bubble:nth-child(3) { animation-delay: 0.3s; }
+.skill-bubble:nth-child(4) { animation-delay: 0.4s; }
+.skill-bubble:nth-child(5) { animation-delay: 0.5s; }
+.skill-bubble:nth-child(6) { animation-delay: 0.6s; }
+.skill-bubble:nth-child(7) { animation-delay: 0.7s; }
+.skill-bubble:nth-child(8) { animation-delay: 0.8s; }
+.skill-bubble:nth-child(9) { animation-delay: 0.9s; }
+.skill-bubble:nth-child(10) { animation-delay: 1s; }
+/* Add more if needed */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-card {
+    max-width: 100%;
+  }
+}

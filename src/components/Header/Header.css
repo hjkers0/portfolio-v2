@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.header-language {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-contact {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.2rem;
+  gap: 20px;
+}
+
+.language-select-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 768px) {
+  .header-content {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .header-contact {
+    align-items: center;
+  }
+  
+}

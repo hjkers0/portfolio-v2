@@ -1,0 +1,50 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  z-index: -1;
+}
+
+.background-gradient::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.background-gradient::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.15) 0%, rgba(244, 114, 182, 0) 70%);
+  bottom: 0;
+  left: 10%;
+  border-radius: 50%;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
