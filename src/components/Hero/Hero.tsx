@@ -18,11 +18,15 @@ export default function Hero({ lang }: { lang: string }) {
   const t = translations[lang as keyof typeof translations] || translations.es;
 
   
-  const handleActionClick = (action: string) => {
+  const handleActionClick = (action: string, e: React.MouseEvent) => {
     if (action === selectedAction) return;
-    
+    e.preventDefault();
     setIsVideoTransitioning(true); 
-    
+
+    if (window.innerWidth < 768) {
+      mobileRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     setTimeout(() => {
       setSelectedAction(action);
       setVideoPlaying(false);
@@ -153,7 +157,9 @@ export default function Hero({ lang }: { lang: string }) {
     <div className="hero">
       <div className="hero-container">
         {/* Left side - Mobile phone with video */}
-        <div className="hero-mobile-container">
+        <div
+          id="hero-mobile-container" 
+          className="hero-mobile-container">
           <div 
             ref={mobileRef}
             className="hero-mobile" 
@@ -245,7 +251,7 @@ export default function Hero({ lang }: { lang: string }) {
                   <div 
                     key={action.id}
                     className={`demo-card ${selectedAction === action.id ? 'active' : ''} ${action.role}`}
-                    onClick={() => handleActionClick(action.id)}
+                    onClick={(e) => handleActionClick(action.id, e)}
                   >
                     <div className="demo-card-icon">{action.icon}</div>
                     <span className="demo-card-title">
